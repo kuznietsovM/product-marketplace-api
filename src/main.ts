@@ -5,10 +5,10 @@ import { AppModule } from "./app.module";
 
 (async () => {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-
+  const port = 80
   app.enableCors();
 
-  app.listen(3001, async () => {
-    console.log(`> Ready on http://localhost:3001`);
+  app.listen(port, async () => {
+    console.log(`> Ready on http://localhost:${port}`);
   });
 })();
