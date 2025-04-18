@@ -6,7 +6,7 @@ import { AppModule } from "./app.module";
 (async () => {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const port = 80
-  app.enableCors();
+  app.enableCors({origin: true});
 
   app.listen(port, async () => {
     console.log(`> Ready on http://localhost:${port}`);
